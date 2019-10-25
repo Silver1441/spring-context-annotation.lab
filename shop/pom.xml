@@ -26,5 +26,11 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>${commons.beanutils.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.2.0.RELEASE</version>
+		</dependency>
 	</dependencies>
 </project>
