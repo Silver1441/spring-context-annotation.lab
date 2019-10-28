@@ -3,11 +3,15 @@ package org.shop.configuration;
 import org.shop.repository.*;
 import org.shop.repository.factory.UserRepositoryFactory;
 import org.shop.repository.map.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RepositoryConfiguration {
+
+    @Value("${initial.sequence}")
+    private long initialSequence;
 
     @Bean
     public ItemRepository itemRepository() {
@@ -16,7 +20,9 @@ public class RepositoryConfiguration {
 
     @Bean
     public OrderRepository orderRepository() {
-        return new OrderMapRepository();
+        OrderMapRepository orderMapRepository = new OrderMapRepository();
+        orderMapRepository.setSequence(initialSequence);
+        return orderMapRepository;
     }
 
     @Bean

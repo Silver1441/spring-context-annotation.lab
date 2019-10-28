@@ -2,6 +2,8 @@ package org.shop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.PostConstruct;
+
 /**
  * The main Data Initializer util class.
  */
