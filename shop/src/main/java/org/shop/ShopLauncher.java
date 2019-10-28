@@ -22,6 +22,7 @@ public class ShopLauncher {
         ProductRepository productRepository = context.getBean(ProductRepository.class);
         ProposalRepository proposalRepository = context.getBean(ProposalRepository.class);
         UserRepository userRepository = context.getBean(UserRepository.class);
+        RandomValuesHolder randomValuesHolder = context.getBean(RandomValuesHolder.class);
 
         ProposalService proposalService = context.getBean(ProposalService.class);
         proposalService.activateProposal(2L);
@@ -36,5 +37,9 @@ public class ShopLauncher {
 
         System.out.println(userRepository.getUserById(1L));
         System.out.println(userRepository.getUserById(2L));
+
+        System.out.println(randomValuesHolder.getValue1());
+        System.out.println(randomValuesHolder.getValue2());
+        System.out.println(randomValuesHolder.getValue3());
     }
 }
