@@ -1,14 +1,14 @@
-package org.shop;
+package org.shop.util;
 
 import org.shop.annotation.InjectRandomInt;
 
-public class RandomValuesHolder {
+public class SessionRandomValuesHolder {
 
     @InjectRandomInt(minValue = 0, maxValue = 10)
     private int value1;
 
     @InjectRandomInt(minValue = 5, maxValue = 8)
-    private int value2;
+    private long value2;
 
     @InjectRandomInt(minValue = 1, maxValue = 99)
     private int value3;
@@ -17,7 +17,7 @@ public class RandomValuesHolder {
         return value1;
     }
 
-    public int getValue2() {
+    public long getValue2() {
         return value2;
     }
 

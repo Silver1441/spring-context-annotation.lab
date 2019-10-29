@@ -1,7 +1,7 @@
 package org.shop.configuration;
 
-import org.shop.annotation.InjectRandomIntBeanPostProcessor;
-import org.shop.RandomValuesHolder;
+import org.shop.processor.InjectRandomIntBeanPostProcessor;
+import org.shop.util.SessionRandomValuesHolder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -31,7 +31,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public RandomValuesHolder randomValuesHolder() {
-        return new RandomValuesHolder();
+    public SessionRandomValuesHolder randomValuesHolder() {
+        return new SessionRandomValuesHolder();
     }
 }
