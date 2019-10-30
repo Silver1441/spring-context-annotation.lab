@@ -12,15 +12,15 @@ public class InjectRandomIntBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        Field[] fields = bean.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            checkFieldForAnnotation(field, bean);
+        }
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        Field[] fields = bean.getClass().getDeclaredFields();
-        for (Field field : fields) {
-            checkFieldForAnnotation(field, bean);
-        }
         return bean;
     }
 

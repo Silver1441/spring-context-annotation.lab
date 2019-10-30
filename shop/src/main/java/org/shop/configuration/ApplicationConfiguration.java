@@ -2,10 +2,7 @@ package org.shop.configuration;
 
 import org.shop.processor.InjectRandomIntBeanPostProcessor;
 import org.shop.util.SessionRandomValuesHolder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 import static org.shop.common.Sellers.*;
 
@@ -14,6 +11,8 @@ import java.util.Map;
 
 @Configuration
 @PropertySource("classpath:application.properties")
+@ComponentScan(basePackages = {"org.shop.aspect"})
+@EnableAspectJAutoProxy
 @Import({RepositoryConfiguration.class, InitializerConfiguration.class, ServiceConfiguration.class})
 public class ApplicationConfiguration {
 
