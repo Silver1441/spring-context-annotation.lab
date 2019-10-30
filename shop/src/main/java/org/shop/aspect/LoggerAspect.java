@@ -28,7 +28,6 @@ public class LoggerAspect {
 
     @Before("logAll()")
     public void logAfterMethodCall(JoinPoint jp) {
-        System.out.println("Check");
-        logger.info(jp.getSourceLocation().toString());
+        logger.info("Method: {}",jp.getSignature().toString());
     }
 }
